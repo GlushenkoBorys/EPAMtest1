@@ -21,15 +21,23 @@ namespace EPAMtest1
 
             int[] array = new int[++diapason];
 
+            int sum = 0;
+
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = startDiapason ++;
-                Console.WriteLine(array[i]);
+                char[] allChar = array[i].ToString().ToCharArray();
                 
+                char myChar;
+                for (int y = 0; y < allChar.Length; y++)
+                {
+                    myChar = allChar[y];
+                    if (myChar == '7')
+                        sum++;
+                }
             }
-
+            Console.WriteLine($"Количество 7 в заданном диапазоне = {sum}"); 
             Console.ReadLine();
-
         }
     }
 }
