@@ -19,24 +19,29 @@ namespace EPAMtest1
             int stopDiapason = Int32.Parse(Console.ReadLine());
             int diapason = stopDiapason - startDiapason;
 
-            int[] array = new int[++diapason];
+            int[] array = new int[++diapason];          
 
             int sum = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = startDiapason ++;
+                array[i] = startDiapason++;
                 char[] allChar = array[i].ToString().ToCharArray();
-                
+
                 char myChar;
+                bool flag = false;
                 for (int y = 0; y < allChar.Length; y++)
                 {
+                    
                     myChar = allChar[y];
-                    if (myChar == '7')
+                    if (myChar == '7' && flag == false)
+                    {
                         sum++;
+                        flag = true;
+                    }                 
                 }
             }
-            Console.WriteLine($"Количество 7 в заданном диапазоне = {sum}"); 
+            Console.WriteLine($"Количество чисел с 7 в заданном диапазоне = {sum}");
             Console.ReadLine();
         }
     }
